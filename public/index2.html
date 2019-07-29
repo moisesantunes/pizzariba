@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+
+<link href='https://fonts.googleapis.com/css?family=Condiment' rel='stylesheet'>
+
+<link href='https://fonts.googleapis.com/css?family=Racing Sans One' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="estilo.css">
+
+
+</head>
+<body>
+	<img class="image" onclick="speed()" src="speedy.png" >
+	<h1 class="titulo" >Pizza Ariba!!</h1>
+	<section id="cardapio" >
+		<div id="cardapio_topo" >
+		
+			<button onclick="cardapio('menu')">Tudo</button>
+			<button onclick="cardapio('pizza')">Pizzas</button>
+			<button onclick="cardapio('torta')">Tortas</button>
+			<button onclick="cardapio('salada')">Saladas</button>
+			<button onclick="cardapio('bebida')">Bebidas</button>
+			<p>total: <span id="nmenu" ></span></p>
+		</div>
+		<div id="cardapio_corpo"  >
+		
+			
+			
+		</div>
+	</section>
+	
+<a href="https://api.whatsapp.com/send?phone=5521989317111&text=quero pizza" target="_blank" rel="nofollow">Falar com a WNWEB</a>	
+
+
+<script type="text/javascript">
+//	let num = document.getElementsByClassName("menu");
+//	document.getElementById("nmenu").innerHTML=num.length
+	let pedidos = "";
+	let lped =[];	
+	function cardapio(c){
+		let menun = document.getElementsByClassName("menu");
+		let num = document.getElementsByClassName(c);
+		document.getElementById("nmenu").innerHTML=num.length	
+		for(let item of menun){
+			if(!item.classList.contains(c)){
+				item.classList.add("esconde")
+			}else{
+				if(item.classList.contains("esconde")) item.classList.remove("esconde")
+				
+				}	
+			}
+		}
+	function speed(){
+		let im =document.getElementsByClassName("image")[0];
+		im.classList.toggle("sacode");
+		im.addEventListener("animationend", () =>{
+			im.classList.remove("sacode")
+		})	
+		let ariba = new Audio("speedy_gonzalez.mp3");
+		ariba.play()
+		navigator.vibrate([300,100,300,100,300,100,600])
+	}
+	
+	
+	let m="";
+		const pratos = [
+			{ 
+				icone:"🍕",	
+				tipo: "pizza",
+				sabor: "Calabresa",
+				descrição:"Uma deliciosa receita que traz o sabor da calabresa junto com cebola, salsa e azeitona sobre uma generosa camada de molho.",
+				valor: 27.00
+			},	
+			{ 
+				icone:"🍕",	
+				tipo: "pizza",
+				sabor: "Portuguesa",
+				descrição:"Uma deliciosa receita que traz o sabor da calabresa junto com cebola, salsa, presunto, mussarela e azeitona sobre uma generosa camada de molho e azeite.",
+				valor: 27.00
+			},	
+			{ 
+				icone:"🍰",	
+				tipo: "torta",
+				sabor: "Napolitana",
+				descrição:"Um clássico da culinária trás mussarela, tomate e manjericão .",
+				valor: 27.00
+			},	
+			{ 
+				icone:"🍷",	
+				tipo: "bebida",
+				sabor: "Chopp de vinho",
+				descrição:"Refrescante e inovador .",
+				valor: 2.60
+			},	
+			
+			
+		];
+			
+		pratos.forEach(function(item, i){
+			document.getElementById("cardapio_corpo").innerHTML+= `
+				<div class="menu ${item.tipo}">
+					<h2 class="icone">${item.icone}</h2>
+						<div>	
+							<p class="sabor">${item.sabor} <span class="valor" > R$ ${item.valor.toFixed(2).toString().replace(".", ",")}</span> </p>
+							<button class="desc" id="${i}" >descrição</button>
+						</div>
+				</div>
+			`
+		});
+		
+		let num = document.getElementsByClassName("menu");
+		document.getElementById("nmenu").innerHTML=num.length
+		
+		
+	</script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

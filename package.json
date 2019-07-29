@@ -1,0 +1,14 @@
+{
+  "name": "pizzariba",
+  "version": "1.0.0",
+  "description": "um app para testar algumas coisas de front",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

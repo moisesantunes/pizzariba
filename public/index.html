@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Pizza🍕Riba!!!</title>
+			<link href='https://fonts.googleapis.com/css?family=Condiment' rel='stylesheet'>
+			<link href='https://fonts.googleapis.com/css?family=Racing Sans One' rel='stylesheet'>
+			<link rel="stylesheet" type="text/css" href="estilo.css">
+		</head>
+		<body>
+			<section>
+				<img class="image" onclick="speed()" src="speedy.png" >
+				<h1 class="titulo" >Pizza Ariba!!!</h1>
+			</section>
+			<section id="cardapio" >
+				<div id="cardapio_topo" >
+					<div>
+						<button onclick="cardapio('menu')">Tudo</button>
+						<button onclick="cardapio('pizza')">Pizzas</button>
+						<button onclick="cardapio('torta')">Tortas</button>
+						<button onclick="cardapio('salada')">Saladas</button>
+						<button onclick="cardapio('bebida')">Bebidas</button>
+					</div>
+					<p >total: <span id="nmenu" ></span></p>
+				</div>
+				<div id="cardapio_corpo"  >	
+				</div>
+			</section>	
+			<a href="https://api.whatsapp.com/send?phone=5521989317111&text=quero pizza" target="_blank" rel="nofollow">Falar com a WNWEB</a>	
+			<div id="lista_p" >
+			</div>
+			
+			<div id="modalbox" class="modal" >
+				<div class="modal-content" >
+					<div class="modal-header">
+						<span class="close">x</span>
+						<h2 id="modal-p-h" >Modal Header</h2>
+					</div>
+					<div class="modal-body">
+						<p id="modal-p-d" >...</p>
+					</div>
+					<div class="modal-footer">
+						<div >
+							<input type="range" name="num_item_slide" min="1" max="20" id="slide" value="1"  class="slider" >
+	 						<span id="num_item_valor" >1</span><br>
+						</div>
+						<button id="pedir" >Pedir</button>
+					</div>
+				</div>
+			</div>
+
+<script type="text/javascript" src="cardapio.js"></script>
+<script type="text/javascript">
+	let num = document.getElementsByClassName("menu");
+	document.getElementById("nmenu").innerHTML=num.length;	
+	function cardapio(c){
+		let menun = document.getElementsByClassName("menu");
+		let num = document.getElementsByClassName(c);
+		document.getElementById("nmenu").innerHTML=num.length	
+		for(let item of menun){
+			if(!item.classList.contains(c)){
+				item.classList.add("esconde")
+			}else{
+				if(item.classList.contains("esconde")) item.classList.remove("esconde")
+				
+				}	
+			}
+		}
+	function speed(){
+		let im =document.getElementsByClassName("image")[0];
+		im.classList.toggle("sacode");
+		im.addEventListener("animationend", () =>{
+			im.classList.remove("sacode")
+		})	
+		let ariba = new Audio("speedy_gonzalez.mp3");
+		ariba.play()
+		navigator.vibrate([300,100,300,100,300,200,600])
+	}
+	
+	</script>
+	<script type="text/javascript" src="script.js"></script>
+		</body>
+	</html>

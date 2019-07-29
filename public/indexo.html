@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+
+<link href='https://fonts.googleapis.com/css?family=Condiment' rel='stylesheet'>
+
+<link href='https://fonts.googleapis.com/css?family=Racing Sans One' rel='stylesheet'>
+
+<style type="text/css">
+*{box-sizing:border-box;}
+body{margin:0;padding:0;}
+
+.titulo{
+	font-family: 'Condiment';
+	font-weight:lighter;
+	color: #ffe8c6;
+	text-shadow: 2px 0 0 red, -2px 0 0 red, 0 2px 0 red, 0 -2px 0 red, 1px 1px red, -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red;
+	text-align:center;
+	font-size:12vw;
+	letter-spacing:1.5vw;
+	
+	margin-top:-10%;
+	transform: rotate(-5deg);
+}
+img{
+	width:25vw;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+.sacode{
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s; 
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: 4; 
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.menu{
+	border:none;
+	padding: 1vw;
+	margin:2vh 2vw;
+	display:flex;
+	border-radius:5px;
+	background-color:salmon;
+	color: #ffe8c6;
+
+}
+.icone{
+	margin:3vw;	
+	font-size:10vw;	
+}
+ .menu div{
+	padding:0;
+	width:100%;
+
+}
+.sabor{
+	margin:0;
+	padding:5px 5px 7px 5px;
+
+}
+.sabor .valor{
+	float:right;
+	background-color:red;
+	border:none;
+	border-radius:5px;
+	padding:2px;
+	
+
+}
+.descri{
+	display:none;
+}
+.esconde{
+	display:none;
+}
+</style>
+</head>
+<body>
+	<img class="image" onclick="speed()" src="speedy.png" >
+	<h1 class="titulo" >Pizza Ariba!!</h1>
+	<section id="cardapio" >
+		<div id="cardapio_topo" >
+		
+			<button onclick="cardapio('menu')">Tudo</button>
+			<button onclick="cardapio('pizza')">Pizzas</button>
+			<button onclick="cardapio('torta')">Tortas</button>
+			<button onclick="cardapio('salada')">Saladas</button>
+			<button onclick="cardapio('bebida')">Bebidas</button>
+			<p>total: <span id="nmenu" ></span></p>
+		</div>
+		<div id="cardapio_corpo"  >
+			<div class="menu pizza" >
+				<h2 class="icone" >🍕</h2>
+				<div>
+					<p class="sabor" > Calabresa<span class="valor" >R$ 20,00</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+			<div class="menu pizza" >
+				<h2 class="icone" >🍕</h2>
+				<div>
+					<p class="sabor" >Mussarela<span class="valor" >R$ 25,00</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+			
+			<div class="menu pizza" >
+				<h2 class="icone" >🍕</h2>
+				<div>
+					<p class="sabor" >Portuguesa<span class="valor" >R$ 30,00</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+			<div class="menu torta" >
+				<h2 class="icone" >🍰</h2>
+				<div>
+					<p class="sabor" >Morango<span class="valor" >R$ 8,00</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+			<div class="menu torta" >
+				<h2 class="icone" >🍰</h2>
+				<div>
+					<p class="sabor" >Chocolate<span class="valor" >R$ 8,50</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+
+			<div class="menu salada" >
+				<h2 class="icone" >🥗</h2>
+				<div>
+					<p class="sabor" >Cézar<span class="valor" >R$ 24,00</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+			<div class="menu salada" >
+				<h2 class="icone" >🥗</h2>
+				<div>
+					<p class="sabor" >Graga<span class="valor" >R$ 21,00</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+			<div class="menu salada" >
+				<h2 class="icone" >🥗</h2>
+				<div>
+					<p class="sabor" >Puntanesca<span class="valor" >R$ 30,00</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+			<div class="menu pizza" >
+				<h2 class="icone" >🍕</h2>
+				<div>
+					<p class="sabor" >Napolitana<span class="valor" >R$ 22,00</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+			<div class="menu torta" >
+				<h2 class="icone" >🍮</h2>
+				<div>
+					<p class="sabor" >Mousse de vários sabores<span class="valor" >R$ 20,00</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+			<div class="menu bebida" >
+				<h2 class="icone" >🍷</h2>
+				<div>
+					<p class="sabor" >Cabernet<span class="valor" >R$ 18,00</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+			<div class="menu bebida" >
+				<h2 class="icone" >☕</h2>
+				<div>
+					<p class="sabor" >Caputino<span class="valor" >R$ 10,00</span></p>
+					<p class="descri" >aqui vai a descrição do prato</p>
+				</div>
+			</div>
+			
+			
+			
+			
+		</div>
+	</section>
+	
+<a href="https://api.whatsapp.com/send?phone=5521989317111&text=quero pizza" target="_blank" rel="nofollow">Falar com a WNWEB</a>	
+
+
+<script type="text/javascript">
+	let num = document.getElementsByClassName("menu");
+	document.getElementById("nmenu").innerHTML=num.length
+	
+	let pedidos = "";
+	let lped =[];
+	
+	
+	function cardapio(c){
+		let menun = document.getElementsByClassName("menu");
+		let num = document.getElementsByClassName(c)
+		
+		alert(pratos[0].tipo)
+		
+		document.getElementById("nmenu").innerHTML=num.length
+		
+		for(let item of menun){
+		
+		
+		
+		
+		
+	
+			if(!item.classList.contains(c)){
+				item.classList.add("esconde")
+			}else{
+				if(item.classList.contains("esconde")) item.classList.remove("esconde")
+				
+				}	
+			}
+		}
+	
+	
+	function speed(){
+		let im =document.getElementsByClassName("image")[0];
+		im.classList.toggle("sacode");
+		im.addEventListener("animationend", () =>{
+			im.classList.remove("sacode")
+		})	
+		let ariba = new Audio("speedy_gonzalez.mp3");
+		ariba.play()
+		navigator.vibrate([300,100,300,100,300,100,600])
+	}
+	</script>
+	
+	
+	<script >
+	/*
+		fetch('cardapio.json')
+		.then(function (response){ return response.json();})
+		.then(json => alert(json.products[0].Name))
+		.catch(function (erro){
+		alert(erro)
+		})
+	
+	*/
+	</script>
+	<script type="text/javascript">
+		const pratos = [
+			{ 
+				tipo: "🍕",
+				sabor: "Calabresa",
+				descrição:"Uma deliciosa receita que traz o sabor da calabresa junto com cebola, salsa e azeitona sobre uma generosa camada de molho.",
+				valor: 27.00
+			},	
+			{ 
+				tipo: "🍕",
+				sabor: "Portuguesa",
+				descrição:"Uma deliciosa receita que traz o sabor da calabresa junto com cebola, salsa, presunto, mussarela e azeitona sobre uma generosa camada de molho e azeite.",
+				valor: 27.00
+			},	
+			{ 
+				tipo: "🍕",
+				sabor: "Napolitana",
+				descrição:"Um clássico da culinária trás mussarela, tomate e manjericão .",
+				valor: 27.00
+			},	
+			
+			
+		]
+			
+			
+		
+	
+	
+	</script>
+</body>
+</html>
